@@ -4,46 +4,34 @@ Site moderno para venda de guia de técnicas de estudo, com painel administrativ
 
 ## 🚀 Stack Tecnológica
 
-### Frontend (Vercel)
+### Frontend (100% estático - Vercel)
 - **Vite** + **React** + **TypeScript**
 - **Tailwind CSS** v4 para estilos
 - **Framer Motion** para animações
 - **React Router** para navegação
-- **Zustand** para gerenciamento de estado
-- **React Query** para cache de dados
+- **Zustand** para gerenciamento de estado (com persistência local)
 - **Recharts** para gráficos no admin
-
-### Backend (Azure App Service)
-- **Node.js** + **Express** + **TypeScript**
-- **JWT** para autenticação
-- Pronto para **Azure Cosmos DB** (opcional)
+- **Sem backend necessário!** Tudo funciona com localStorage
 
 ## 📁 Estrutura do Projeto
 
 ```
 smartco/
-├── frontend/          # App React (Vercel)
-│   ├── src/
-│   │   ├── components/
-│   │   │   ├── admin/      # Componentes do painel admin
-│   │   │   ├── sections/   # Seções da landing page
-│   │   │   └── ui/         # Componentes reutilizáveis
-│   │   ├── pages/
-│   │   │   ├── admin/      # Páginas do admin
-│   │   │   └── HomePage.tsx
-│   │   ├── services/       # API calls
-│   │   └── stores/         # Zustand stores
-│   └── vercel.json
-└── backend/           # API Express (Azure)
-    └── src/
-        ├── routes/
-        ├── middleware/
-        └── index.ts
+└── frontend/          # App React (Vercel)
+    ├── src/
+    │   ├── components/
+    │   │   ├── admin/      # Componentes do painel admin
+    │   │   ├── sections/   # Seções da landing page
+    │   │   └── ui/         # Componentes reutilizáveis
+    │   ├── pages/
+    │   │   ├── admin/      # Páginas do admin
+    │   │   └── HomePage.tsx
+    │   ├── services/       # Funções de autenticação e analytics
+    │   └── stores/         # Zustand stores com persistência
+    └── vercel.json
 ```
 
 ## 🛠️ Configuração Local
-
-### Frontend
 
 ```bash
 cd frontend
@@ -53,148 +41,67 @@ npm run dev
 
 O site estará disponível em `http://localhost:5173`
 
-### Backend
+## 🌐 Deploy no Vercel
 
-```bash
-cd backend
-cp .env.example .env
-# Edite o .env com suas configurações
-npm install
-npm run dev
-```
+### 1. Conecte ao Vercel
 
-A API estará disponível em `http://localhost:3001`
+1. Acesse [vercel.com](https://vercel.com)
+2. Clique em "Import Project"
+3. Selecione o repositório `smartco`
+4. Configure:
+   - **Root Directory**: `frontend`
+   - **Build Command**: `npm run build`
+   - **Output Directory**: `dist`
 
-## 🌐 Deploy
+### 2. Configure variáveis de ambiente (opcional)
 
-### Frontend no Vercel
+Para mudar as credenciais do admin:
 
-1. **Conecte seu repositório GitHub ao Vercel**:
-   - Acesse [vercel.com](https://vercel.com)
-   - Clique em "Import Project"
-   - Selecione o repositório `smartco`
-   - Configure:
-     - **Root Directory**: `frontend`
-     - **Build Command**: `npm run build`
-     - **Output Directory**: `dist`
+- `VITE_ADMIN_EMAIL`: Email do admin (padrão: admin@smart-co.tech)
+- `VITE_ADMIN_PASSWORD`: Senha do admin (padrão: admin123)
 
-2. **Configure as variáveis de ambiente**:
-   - `VITE_API_URL`: URL do seu backend na Azure
+### 3. Configure o domínio
 
-3. **Configure o domínio customizado**:
-   - Vá em Settings > Domains
-   - Adicione `smart-co.tech`
-   - Configure o DNS conforme instruções do Vercel
-
-### Backend na Azure (Plano Estudante)
-
-1. **Crie um App Service**:
-   ```bash
-   # Login no Azure
-   az login
-
-   # Crie o resource group
-   az group create --name smartco-rg --location brazilsouth
-
-   # Crie o App Service Plan (F1 é gratuito)
-   az appservice plan create \
-     --name smartco-plan \
-     --resource-group smartco-rg \
-     --sku F1 \
-     --is-linux
-
-   # Crie o Web App
-   az webapp create \
-     --name smartco-api \
-     --resource-group smartco-rg \
-     --plan smartco-plan \
-     --runtime "NODE:20-lts"
-   ```
-
-2. **Configure o deploy via GitHub Actions**:
-
-   Crie o arquivo `.github/workflows/azure-deploy.yml`:
-
-   ```yaml
-   name: Deploy Backend to Azure
-
-   on:
-     push:
-       branches: [main]
-       paths: ['backend/**']
-
-   jobs:
-     build-and-deploy:
-       runs-on: ubuntu-latest
-       steps:
-         - uses: actions/checkout@v4
-
-         - name: Setup Node.js
-           uses: actions/setup-node@v4
-           with:
-             node-version: '20'
-
-         - name: Install and Build
-           run: |
-             cd backend
-             npm ci
-             npm run build
-
-         - name: Deploy to Azure
-           uses: azure/webapps-deploy@v2
-           with:
-             app-name: smartco-api
-             publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-             package: backend
-   ```
-
-3. **Configure as variáveis de ambiente na Azure**:
-   - Portal Azure > App Service > Configuration
-   - Adicione:
-     - `NODE_ENV`: production
-     - `JWT_SECRET`: (gere um secret seguro)
-     - `ADMIN_EMAIL`: seu-email@exemplo.com
-     - `ADMIN_PASSWORD`: uma-senha-segura
-     - `FRONTEND_URL`: https://smart-co.tech
-
-### Configuração do Domínio DNS
-
-No seu provedor de DNS (onde registrou smart-co.tech):
+1. Vá em Settings > Domains
+2. Adicione `smart-co.tech`
+3. Configure o DNS:
 
 ```
-# Para o site principal (Vercel)
 @    A     76.76.21.21
 www  CNAME cname.vercel-dns.com
-
-# Se quiser subdomínio para API (opcional)
-api  CNAME smartco-api.azurewebsites.net
 ```
 
 ## 🔐 Painel Admin
 
 Acesse: `https://smart-co.tech/admin`
 
-**Credenciais padrão** (mude em produção!):
+**Credenciais padrão** (mude nas variáveis de ambiente em produção!):
 - Email: `admin@smart-co.tech`
 - Senha: `admin123`
 
 ### Funcionalidades:
 - **Dashboard**: Visão geral de cliques e métricas
 - **Conteúdo**: Editar textos, preços e links do site
-- **Analytics**: Gráficos detalhados de cliques por botão
+- **Analytics**: Gráficos de cliques por botão (armazenados localmente)
 
-## 📊 Tracking de Cliques
+## 📊 Como Funciona o Tracking
 
-O sistema rastreia automaticamente cliques nos botões de CTA:
-- `hero_cta`: Botão principal no topo
-- `cta_buy`: Botão de compra no final
+### Armazenamento Local
+- Os cliques são salvos no `localStorage` do navegador do visitante
+- Os dados do admin são agregados quando você acessa o painel
+- Mantém histórico dos últimos 30 dias
 
-Os dados são armazenados e exibidos no painel admin.
+### Google Analytics (opcional)
+Para analytics mais robustos, adicione o Google Analytics:
+
+1. Crie uma conta em [analytics.google.com](https://analytics.google.com)
+2. Copie seu ID de medição (G-XXXXXXXXXX)
+3. Edite `frontend/index.html` e descomente o bloco do GA, substituindo `GA_MEASUREMENT_ID`
 
 ## 🎨 Customização
 
 ### Cores
-Edite `/frontend/src/index.css` para alterar o tema:
+Edite `/frontend/src/index.css`:
 
 ```css
 @theme {
@@ -204,7 +111,19 @@ Edite `/frontend/src/index.css` para alterar o tema:
 ```
 
 ### Conteúdo
-Use o painel admin ou edite `/frontend/src/stores/contentStore.ts` para alterar textos padrão.
+Use o painel admin em `/admin/content` para editar:
+- Títulos e textos
+- Preços
+- Links de checkout (Hotmart, etc.)
+
+As alterações são salvas automaticamente no navegador.
+
+## 💡 Dicas
+
+1. **Links de checkout**: Use links do Hotmart, Eduzz, Monetizze, etc.
+2. **Analytics detalhados**: Configure o Google Analytics para dados mais completos
+3. **Imagens**: Adicione imagens na pasta `public/` e use em seu código
+4. **SEO**: Edite as meta tags em `index.html`
 
 ## 📝 Licença
 
