@@ -70,7 +70,7 @@ export default function Header() {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button variant="primary" size="sm">
+            <Button variant="primary" size="sm" onClick={handleCTAClick}>
               Começar Agora
             </Button>
           </div>
@@ -98,7 +98,7 @@ export default function Header() {
                   {link.label}
                 </a>
               ))}
-              <Button variant="primary" size="sm" className="mt-2">
+              <Button variant="primary" size="sm" className="mt-2" onClick={handleCTAClick}>
                 Começar Agora
               </Button>
             </div>
