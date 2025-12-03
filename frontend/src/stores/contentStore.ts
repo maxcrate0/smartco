@@ -49,7 +49,7 @@ const defaultContent: ContentState = {
     title: 'Domine a Arte de Estudar com Eficiência',
     subtitle: 'Descubra técnicas comprovadas cientificamente para aprender mais rápido, reter informações por mais tempo e alcançar seus objetivos acadêmicos.',
     ctaText: 'Quero Começar Agora',
-    ctaLink: 'https://pay.hotmart.com/seu-produto',
+    ctaLink: 'https://pay.kiwify.com.br/KGCSreQ',
   },
   about: {
     title: 'Transforme sua forma de aprender',
@@ -64,7 +64,7 @@ const defaultContent: ContentState = {
     price: '47',
     originalPrice: '97',
     ctaText: 'Garantir Meu Acesso',
-    ctaLink: 'https://pay.hotmart.com/seu-produto',
+    ctaLink: 'https://pay.kiwify.com.br/KGCSreQ',
   },
 }
 
