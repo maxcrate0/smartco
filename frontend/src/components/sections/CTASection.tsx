@@ -64,7 +64,7 @@ export default function CTASection() {
                 {[
                   '✅ Acesso imediato ao conteúdo completo',
                   '✅ Atualizações gratuitas para sempre',
-                  '✅ Suporte por e-mail exclusivo',
+                  '✅ Suporte por e-mail (contato@jgsp.me)',
                   '✅ Garantia de 7 dias ou seu dinheiro de volta',
                   '✅ Bônus: Checklist de estudo diário',
                   '✅ Bônus: Templates de organização',
@@ -98,6 +98,10 @@ export default function CTASection() {
                     <CreditCard className="w-4 h-4 text-blue-400" />
                     Pix ou Cartão
                   </div>
+                </div>
+
+                <div className="text-center mt-3 text-sm text-green-400">
+                  🔒 Pagamento totalmente seguro via Kiwify
                 </div>
               </div>
             </div>

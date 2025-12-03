@@ -98,7 +98,7 @@ export default function TermsPage() {
                   o reembolso integral dentro deste prazo.
                 </p>
                 <p className="mt-4">
-                  Para solicitar reembolso, entre em contato pelo e-mail contato@smart-co.tech ou 
+                  Para solicitar reembolso, entre em contato pelo e-mail contato@jgsp.me ou 
                   diretamente pela plataforma Kiwify.
                 </p>
               </section>
@@ -181,8 +181,8 @@ export default function TermsPage() {
                 </p>
                 <p className="mt-4">
                   <strong className="text-white">E-mail:</strong>{' '}
-                  <a href="mailto:contato@smart-co.tech" className="text-primary-400 hover:underline">
-                    contato@smart-co.tech
+                  <a href="mailto:contato@jgsp.me" className="text-primary-400 hover:underline">
+                    contato@jgsp.me
                   </a>
                 </p>
               </section>

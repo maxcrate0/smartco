@@ -147,8 +147,8 @@ export default function PrivacyPage() {
                 </p>
                 <p className="mt-4">
                   <strong className="text-white">E-mail:</strong>{' '}
-                  <a href="mailto:contato@smart-co.tech" className="text-primary-400 hover:underline">
-                    contato@smart-co.tech
+                  <a href="mailto:contato@jgsp.me" className="text-primary-400 hover:underline">
+                    contato@jgsp.me
                   </a>
                 </p>
               </section>

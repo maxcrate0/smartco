@@ -99,8 +99,8 @@ export default function FAQSection() {
           <p className="text-gray-400 flex items-center justify-center gap-2">
             <MessageCircle className="w-5 h-5" />
             Ainda tem dúvidas? Entre em contato: 
-            <a href="mailto:contato@smart-co.tech" className="text-primary-400 hover:underline">
-              contato@smart-co.tech
+            <a href="mailto:contato@jgsp.me" className="text-primary-400 hover:underline">
+              contato@jgsp.me
             </a>
           </p>
         </motion.div>

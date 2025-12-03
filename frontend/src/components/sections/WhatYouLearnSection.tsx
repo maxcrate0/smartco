@@ -116,14 +116,14 @@ export default function WhatYouLearnSection() {
         >
           <div className="text-center">
             <span className="inline-block px-4 py-1 bg-accent-500/20 rounded-full text-accent-400 text-sm font-semibold mb-4">
-              🎁 BÔNUS EXCLUSIVO
+              🎁 BÔNUS
             </span>
             <h3 className="text-2xl font-bold text-white mb-4">
               Checklist de Estudos + Cronograma Semanal
             </h3>
             <p className="text-gray-400 mb-6">
               Templates prontos para você organizar seus estudos e nunca mais se perder.
-              Valor: R$ 27 — <span className="text-green-400 font-semibold">GRÁTIS</span> hoje.
+              Valor: R$ 27 — <span className="text-green-400 font-semibold">oferta por tempo limitado</span>.
             </p>
           </div>
         </motion.div>

@@ -108,7 +108,7 @@ export default function FinalCTASection() {
               <div className="mb-8 p-6 bg-accent-500/10 rounded-2xl border border-accent-500/20">
                 <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
                   <Gift className="w-5 h-5 text-accent-400" />
-                  Bônus Exclusivos (Grátis hoje):
+                  Bônus:
                 </h3>
                 <ul className="space-y-2">
                   {bonuses.map((bonus, index) => (
@@ -151,7 +151,7 @@ export default function FinalCTASection() {
                   <ArrowRight className="w-6 h-6 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
                 <p className="text-gray-500 text-sm mt-4">
-                  🔒 Pagamento 100% seguro via Kiwify
+                  🔒 Pagamento totalmente seguro via Kiwify
                 </p>
               </div>
 

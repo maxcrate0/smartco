@@ -62,11 +62,11 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-4 text-sm">Contato</h4>
             <a
-              href="mailto:contato@smart-co.tech"
+              href="mailto:contato@jgsp.me"
               className="text-gray-400 hover:text-primary-400 transition-colors flex items-center gap-2 text-sm mb-4"
             >
               <Mail className="w-4 h-4" />
-              contato@smart-co.tech
+              contato@jgsp.me
             </a>
             <ul className="space-y-2">
               <li>
