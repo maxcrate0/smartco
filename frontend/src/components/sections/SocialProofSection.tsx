@@ -33,9 +33,9 @@ const testimonials = [
 ]
 
 const stats = [
-  { value: '10.000+', label: 'Estudantes transformados' },
-  { value: '4.9/5', label: 'Nota média de avaliação' },
-  { value: '95%', label: 'Taxa de satisfação' },
+  { value: 'R$ 24,70', label: 'Preço promocional' },
+  { value: '7 dias', label: 'Garantia de reembolso' },
+  { value: 'Imediato', label: 'Acesso após pagamento' },
 ]
 
 export default function SocialProofSection() {

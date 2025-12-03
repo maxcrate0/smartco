@@ -26,7 +26,7 @@ export default function BenefitsSection() {
     {
       icon: Star,
       title: 'Confiança nos Estudos',
-      description: 'Sinta-se seguro com uma metodologia comprovada que já ajudou milhares de estudantes.',
+      description: 'Sinta-se seguro com uma metodologia comprovada e técnicas reconhecidas.',
     },
     {
       icon: Zap,

@@ -6,7 +6,7 @@ import { trackClick } from '../../services/api'
 const PAYMENT_LINK = 'https://pay.kiwify.com.br/KGCSreQ'
 
 const quickBenefits = [
-  'Memorize 3x mais rápido',
+  'Memorize de forma mais eficiente',
   'Acabe com a procrastinação',
   'Pare de dar branco em provas',
 ]
@@ -45,7 +45,7 @@ export default function HeroSection() {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-effect mb-8"
           >
             <Sparkles className="w-4 h-4 text-accent-400" />
-            <span className="text-sm text-gray-300">+10.000 estudantes já transformaram seus estudos</span>
+            <span className="text-sm text-gray-300">Técnicas de estudo comprovadas</span>
             <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
           </motion.div>
 
@@ -141,8 +141,8 @@ export default function HeroSection() {
           >
             {[
               { value: '10K+', label: 'Estudantes' },
-              { value: '95%', label: 'Satisfação' },
-              { value: '4.9', label: 'Avaliação' },
+              { value: '7 dias', label: 'Garantia' },
+              { value: 'PDF', label: 'Formato' },
             ].map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="text-2xl md:text-4xl font-bold text-gradient mb-1">{stat.value}</div>

@@ -24,7 +24,7 @@ export default function TechniquesSection() {
     {
       icon: Brain,
       title: 'Prática Ativa',
-      description: 'Faça exercícios, resolva problemas e ensine o conteúdo. A prática ativa é 3x mais eficaz que apenas ler ou assistir.',
+      description: 'Faça exercícios, resolva problemas e ensine o conteúdo. A prática ativa é mais eficaz que apenas ler ou assistir.',
       color: 'from-purple-500 to-pink-500',
     },
     {

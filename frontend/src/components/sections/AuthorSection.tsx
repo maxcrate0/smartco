@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { BookOpen, Award, Users, Target, Lightbulb, GraduationCap } from 'lucide-react'
+import { BookOpen, Target, Lightbulb, GraduationCap, Heart, Sparkles } from 'lucide-react'
 
 export default function AuthorSection() {
   return (
@@ -18,10 +18,10 @@ export default function AuthorSection() {
             className="text-center mb-12"
           >
             <span className="text-primary-400 font-semibold text-sm uppercase tracking-wider mb-4 block">
-              Sobre o Criador
+              Quem Somos
             </span>
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-              Por que você pode <span className="text-gradient">confiar</span> neste método?
+              Feito por <span className="text-gradient">estudantes</span> para estudantes
             </h2>
           </motion.div>
 
@@ -39,70 +39,68 @@ export default function AuthorSection() {
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-white">SmartCo</h3>
-                  <p className="text-primary-400">Especialistas em Aprendizado</p>
+                  <p className="text-primary-400">Estudantes como você</p>
                 </div>
               </div>
 
               <p className="text-gray-300 leading-relaxed">
-                A SmartCo nasceu de uma frustração real: <strong className="text-white">estudar muito e não conseguir resultados</strong>. 
-                Depois de anos pesquisando neurociência e técnicas de aprendizado comprovadas, compilamos tudo o que funciona 
-                de verdade em um único guia.
+                A SmartCo nasceu de uma frustração que todo estudante conhece: <strong className="text-white">passar horas estudando e não conseguir os resultados esperados</strong>. 
+                Nós já passamos por isso.
               </p>
 
               <p className="text-gray-300 leading-relaxed">
-                Este não é mais um e-book genérico. São <strong className="text-white">técnicas usadas por medalhistas 
-                olímpicos de conhecimento, aprovados em medicina e concursos federais</strong>. Nós testamos, aplicamos 
-                e simplificamos para qualquer pessoa conseguir usar.
+                Somos estudantes que pesquisamos e testamos diversas técnicas de estudo até encontrar as que <strong className="text-white">realmente funcionam</strong>. 
+                Compilamos tudo o que aprendemos neste guia para ajudar outros estudantes a não perderem tempo com métodos ineficientes.
               </p>
 
               <div className="bg-dark-700/50 rounded-xl p-6 border border-dark-600">
                 <p className="text-gray-400 italic mb-4">
-                  "Nossa missão é acabar com o estudo ineficiente. Não é sobre estudar mais — é sobre estudar certo."
+                  "Queremos compartilhar o que aprendemos. Não é sobre estudar mais — é sobre estudar certo."
                 </p>
                 <p className="text-primary-400 font-semibold text-sm">— Equipe SmartCo</p>
               </div>
             </motion.div>
 
-            {/* Right side - Credentials */}
+            {/* Right side - What makes it different */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               className="space-y-4"
             >
-              <h4 className="text-lg font-semibold text-white mb-6">O que nos qualifica:</h4>
+              <h4 className="text-lg font-semibold text-white mb-6">Por que criamos este guia:</h4>
 
               <div className="space-y-4">
                 {[
                   {
+                    icon: Heart,
+                    title: 'Experiência Real',
+                    description: 'Somos estudantes que enfrentamos as mesmas dificuldades que você',
+                  },
+                  {
                     icon: BookOpen,
-                    title: 'Pesquisa Científica',
-                    description: 'Baseado em mais de 100 estudos de neurociência e psicologia cognitiva',
-                  },
-                  {
-                    icon: Users,
-                    title: '+10.000 Estudantes',
-                    description: 'Método já testado e aprovado por milhares de pessoas reais',
-                  },
-                  {
-                    icon: Award,
-                    title: '95% de Satisfação',
-                    description: 'Taxa de aprovação baseada em avaliações verificadas',
+                    title: 'Técnicas Comprovadas',
+                    description: 'Baseado em técnicas reconhecidas como Pomodoro, Feynman e Active Recall',
                   },
                   {
                     icon: Target,
-                    title: 'Resultados Comprovados',
-                    description: 'Alunos relatam melhora de 40-70% na retenção de conteúdo',
+                    title: 'Direto ao Ponto',
+                    description: 'Sem enrolação — apenas o que realmente funciona para estudar melhor',
                   },
                   {
                     icon: Lightbulb,
-                    title: 'Técnicas Validadas',
-                    description: 'Pomodoro, Feynman, Active Recall, Repetição Espaçada e mais',
+                    title: 'Fácil de Aplicar',
+                    description: 'Explicamos de forma simples para você começar a usar hoje mesmo',
                   },
                   {
                     icon: GraduationCap,
-                    title: 'Para Todos os Níveis',
-                    description: 'Do ensino médio a concursos públicos e pós-graduação',
+                    title: 'Para Qualquer Objetivo',
+                    description: 'Vestibular, ENEM, concursos, faculdade — as técnicas funcionam para tudo',
+                  },
+                  {
+                    icon: Sparkles,
+                    title: 'Preço Acessível',
+                    description: 'Acreditamos que boas técnicas de estudo devem ser acessíveis a todos',
                   },
                 ].map((item, index) => (
                   <motion.div

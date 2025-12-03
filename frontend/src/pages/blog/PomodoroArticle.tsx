@@ -110,7 +110,7 @@ export default function PomodoroArticle() {
             <p className="text-xl leading-relaxed">
               Você já passou horas "estudando" e, no final, percebeu que não absorveu quase nada? 
               Você não está sozinho. A <strong className="text-white">Técnica Pomodoro</strong> é 
-              a solução usada por milhares de estudantes para manter o foco e estudar de verdade.
+              a solução usada por estudantes para manter o foco e estudar de verdade.
             </p>
 
             <p>

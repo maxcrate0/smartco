@@ -73,7 +73,7 @@ export default function TestimonialsSection() {
             O que nossos <span className="text-gradient">estudantes</span> dizem
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Milhares de estudantes já transformaram sua forma de aprender. Veja o que eles têm a dizer.
+            Veja o que estudantes têm a dizer sobre nossas técnicas de estudo.
           </p>
         </motion.div>
 
@@ -121,9 +121,9 @@ export default function TestimonialsSection() {
         >
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
-              { value: '10.000+', label: 'Estudantes Satisfeitos' },
-              { value: '95%', label: 'Taxa de Satisfação' },
-              { value: '4.9/5', label: 'Avaliação Média' },
+              { value: 'R$ 24,70', label: 'Preço Promocional' },
+              { value: '7 dias', label: 'Garantia de Reembolso' },
+              { value: 'Imediato', label: 'Acesso ao Conteúdo' },
               { value: '50%', label: 'Melhora Média nas Notas' },
             ].map((stat, i) => (
               <div key={i}>

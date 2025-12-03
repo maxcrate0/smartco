@@ -34,7 +34,7 @@ const articles = [
   {
     slug: 'tecnica-pomodoro-guia-completo',
     title: 'Técnica Pomodoro: Guia Completo para Estudar com Foco Total',
-    excerpt: 'Aprenda como usar a técnica Pomodoro para aumentar sua concentração e produtividade nos estudos. Método usado por milhares de estudantes aprovados.',
+    excerpt: 'Aprenda como usar a técnica Pomodoro para aumentar sua concentração e produtividade nos estudos.',
     image: '🍅',
     category: 'Produtividade',
     readTime: '8 min',

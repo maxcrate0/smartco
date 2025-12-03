@@ -29,11 +29,11 @@ export default function MethodExplainedSection() {
               A Ciência Por Trás
             </span>
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-              Por que você vai aprender <span className="text-gradient">3x mais rápido</span>?
+              Por que essas técnicas <span className="text-gradient">funcionam</span>?
             </h2>
             <p className="text-gray-400 text-lg max-w-3xl mx-auto">
-              Não é mágica. É neurociência aplicada. Veja como cada técnica do e-book 
-              <strong className="text-white"> multiplica sua capacidade de aprender</strong>.
+              Não é mágica. São técnicas de estudo reconhecidas e testadas. Veja como cada uma 
+              <strong className="text-white"> pode melhorar seu aprendizado</strong>.
             </p>
           </motion.div>
 
@@ -98,7 +98,7 @@ export default function MethodExplainedSection() {
               </ul>
               <div className="mt-6 p-4 bg-green-500/10 rounded-xl">
                 <p className="text-green-300 text-sm">
-                  <strong>Resultado:</strong> Retenção de 80-95% mesmo após semanas (estudos de Harvard e MIT)
+                  <strong>Resultado:</strong> Retenção muito maior do conteúdo estudado
                 </p>
               </div>
             </motion.div>
@@ -120,19 +120,19 @@ export default function MethodExplainedSection() {
                 {
                   icon: Repeat,
                   technique: 'Repetição Espaçada',
-                  improvement: '+300% retenção',
-                  explanation: 'Revisar no momento exato antes de esquecer grava o conteúdo permanentemente.',
+                  improvement: 'Memorização duradoura',
+                  explanation: 'Revisar no momento certo ajuda a fixar o conteúdo na memória de longo prazo.',
                 },
                 {
                   icon: Brain,
                   technique: 'Active Recall',
-                  improvement: '+50% eficiência',
-                  explanation: 'Testar a si mesmo é 50% mais eficaz que reler, segundo estudos de Princeton.',
+                  improvement: 'Muito mais eficaz',
+                  explanation: 'Testar a si mesmo é comprovadamente mais eficaz que apenas reler o conteúdo.',
                 },
                 {
                   icon: TrendingUp,
                   technique: 'Método Feynman',
-                  improvement: '100% compreensão',
+                  improvement: 'Compreensão real',
                   explanation: 'Explicar em voz alta revela lacunas no entendimento antes da prova.',
                 },
               ].map((item, index) => (
@@ -157,18 +157,18 @@ export default function MethodExplainedSection() {
           >
             <div className="inline-block bg-gradient-to-r from-primary-500/10 to-accent-500/10 border border-primary-500/20 rounded-2xl p-8">
               <p className="text-gray-300 text-lg mb-4">
-                <strong className="text-white">A matemática é simples:</strong>
+                <strong className="text-white">A lógica é simples:</strong>
               </p>
               <p className="text-gray-400 mb-4">
-                Se você retém <span className="text-red-400 font-bold">30%</span> do conteúdo com estudo tradicional,
+                Quando você usa técnicas de estudo mais eficientes,
                 <br />
-                mas retém <span className="text-green-400 font-bold">90%</span> com as técnicas certas...
+                você <span className="text-green-400 font-bold">aprende mais</span> no mesmo tempo.
               </p>
               <p className="text-2xl font-bold text-white">
-                Você aprende <span className="text-gradient">3x mais</span> no mesmo tempo.
+                Estude de forma <span className="text-gradient">mais inteligente</span>.
               </p>
               <p className="text-gray-500 text-sm mt-4">
-                (Ou o mesmo conteúdo em 1/3 do tempo)
+                (E gaste menos tempo com métodos que não funcionam)
               </p>
             </div>
           </motion.div>
