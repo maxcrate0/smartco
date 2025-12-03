@@ -1,8 +1,41 @@
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Brain, Clock, RefreshCw, Target, BookOpen, Lightbulb, CheckCircle, TrendingUp, Calendar } from 'lucide-react';
 
 export default function CurvaEsquecimentoArticle() {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "O Que é a Curva do Esquecimento e Como Vencer Ela: Guia Completo",
+      "description": "Descubra por que você esquece 70% do que estudou em 24 horas e as técnicas cientificamente comprovadas para reter conhecimento por meses ou anos.",
+      "image": "https://smart-co.tech/og-image.png",
+      "author": {
+        "@type": "Organization",
+        "name": "SmartCo",
+        "url": "https://smart-co.tech"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "SmartCo",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://smart-co.tech/favicon.svg"
+        }
+      },
+      "datePublished": "2024-12-01",
+      "dateModified": "2024-12-01",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://smart-co.tech/blog/curva-do-esquecimento"
+      }
+    });
+    document.head.appendChild(script);
+    return () => { document.head.removeChild(script); };
+  }, []);
   const handleBuyClick = () => {
     window.open('https://pay.kiwify.com.br/KGCSreQ', '_blank');
   };

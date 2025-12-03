@@ -1,7 +1,34 @@
+import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { Calendar, Clock, ArrowRight, BookOpen, Brain, Target, Zap, TrendingDown, FileText } from 'lucide-react'
 import { Button } from '../components/ui'
+
+// Schema.org para a página do Blog
+function useBlogSchema() {
+  useEffect(() => {
+    const script = document.createElement('script')
+    script.type = 'application/ld+json'
+    script.text = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "Blog SmartCo - Técnicas de Estudo",
+      "description": "Artigos sobre técnicas de estudo cientificamente comprovadas, produtividade e memorização.",
+      "url": "https://smart-co.tech/blog",
+      "image": "https://smart-co.tech/og-image.png",
+      "publisher": {
+        "@type": "Organization",
+        "name": "SmartCo",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://smart-co.tech/favicon.svg"
+        }
+      }
+    })
+    document.head.appendChild(script)
+    return () => { document.head.removeChild(script) }
+  }, [])
+}
 
 const articles = [
   {
@@ -47,6 +74,8 @@ const articles = [
 ]
 
 export default function BlogPage() {
+  useBlogSchema()
+  
   return (
     <div className="min-h-screen bg-dark-900 pt-24 pb-16">
       <div className="container mx-auto px-4 md:px-6">

@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { Clock, ArrowLeft, ArrowRight, CheckCircle, Zap, BookOpen, Share2, Timer } from 'lucide-react'
@@ -7,6 +8,38 @@ import { trackClick } from '../../services/api'
 const PAYMENT_LINK = 'https://pay.kiwify.com.br/KGCSreQ'
 
 export default function PomodoroArticle() {
+  useEffect(() => {
+    const script = document.createElement('script')
+    script.type = 'application/ld+json'
+    script.text = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Técnica Pomodoro: Guia Completo para Estudar com Foco Total",
+      "description": "Aprenda como usar a técnica Pomodoro para aumentar sua concentração, eliminar distrações e estudar de forma mais eficiente.",
+      "image": "https://smart-co.tech/og-image.png",
+      "author": {
+        "@type": "Organization",
+        "name": "SmartCo",
+        "url": "https://smart-co.tech"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "SmartCo",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://smart-co.tech/favicon.svg"
+        }
+      },
+      "datePublished": "2024-12-01",
+      "dateModified": "2024-12-01",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://smart-co.tech/blog/tecnica-pomodoro"
+      }
+    })
+    document.head.appendChild(script)
+    return () => { document.head.removeChild(script) }
+  }, [])
   const handleCTAClick = async () => {
     await trackClick('blog_pomodoro_cta')
     window.open(PAYMENT_LINK, '_blank')

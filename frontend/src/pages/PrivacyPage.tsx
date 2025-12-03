@@ -1,8 +1,27 @@
+import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { ArrowLeft, Shield } from 'lucide-react'
 
 export default function PrivacyPage() {
+  useEffect(() => {
+    const script = document.createElement('script')
+    script.type = 'application/ld+json'
+    script.text = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Política de Privacidade - SmartCo",
+      "description": "Política de privacidade do SmartCo. Saiba como coletamos, usamos e protegemos seus dados.",
+      "url": "https://smart-co.tech/privacidade",
+      "publisher": {
+        "@type": "Organization",
+        "name": "SmartCo"
+      }
+    })
+    document.head.appendChild(script)
+    return () => { document.head.removeChild(script) }
+  }, [])
+
   return (
     <div className="min-h-screen bg-dark-900 pt-24 pb-16">
       <div className="container mx-auto px-4 md:px-6">

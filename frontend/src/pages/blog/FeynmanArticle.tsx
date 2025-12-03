@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { Clock, ArrowLeft, ArrowRight, CheckCircle, Zap, BookOpen, Brain } from 'lucide-react'
@@ -7,6 +8,38 @@ import { trackClick } from '../../services/api'
 const PAYMENT_LINK = 'https://pay.kiwify.com.br/KGCSreQ'
 
 export default function FeynmanArticle() {
+  useEffect(() => {
+    const script = document.createElement('script')
+    script.type = 'application/ld+json'
+    script.text = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Método Feynman: Como Aprender Qualquer Coisa em 4 Passos",
+      "description": "Descubra a técnica do gênio da física Richard Feynman para entender conceitos complexos de forma simples e nunca mais esquecer o que estudou.",
+      "image": "https://smart-co.tech/og-image.png",
+      "author": {
+        "@type": "Organization",
+        "name": "SmartCo",
+        "url": "https://smart-co.tech"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "SmartCo",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://smart-co.tech/favicon.svg"
+        }
+      },
+      "datePublished": "2024-12-01",
+      "dateModified": "2024-12-01",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://smart-co.tech/blog/metodo-feynman"
+      }
+    })
+    document.head.appendChild(script)
+    return () => { document.head.removeChild(script) }
+  }, [])
   const handleCTAClick = async () => {
     await trackClick('blog_feynman_cta')
     window.open(PAYMENT_LINK, '_blank')

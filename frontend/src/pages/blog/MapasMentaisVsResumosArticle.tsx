@@ -1,8 +1,41 @@
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Brain, FileText, CheckCircle, XCircle, Target, Lightbulb, Clock, BookOpen, GraduationCap, Palette, List } from 'lucide-react';
 
 export default function MapasMentaisVsResumosArticle() {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Mapas Mentais vs Resumos: Qual é Melhor para o ENEM? Guia Definitivo",
+      "description": "Descubra quando usar cada técnica, como combinar as duas para máxima retenção, e veja exemplos práticos para Humanas, Exatas e Ciências da Natureza.",
+      "image": "https://smart-co.tech/og-image.png",
+      "author": {
+        "@type": "Organization",
+        "name": "SmartCo",
+        "url": "https://smart-co.tech"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "SmartCo",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://smart-co.tech/favicon.svg"
+        }
+      },
+      "datePublished": "2024-12-01",
+      "dateModified": "2024-12-01",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://smart-co.tech/blog/mapas-mentais-vs-resumos"
+      }
+    });
+    document.head.appendChild(script);
+    return () => { document.head.removeChild(script); };
+  }, []);
   const handleBuyClick = () => {
     window.open('https://pay.kiwify.com.br/KGCSreQ', '_blank');
   };

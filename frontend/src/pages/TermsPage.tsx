@@ -1,8 +1,27 @@
+import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { ArrowLeft, FileText } from 'lucide-react'
 
 export default function TermsPage() {
+  useEffect(() => {
+    const script = document.createElement('script')
+    script.type = 'application/ld+json'
+    script.text = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Termos de Uso - SmartCo",
+      "description": "Termos de uso do SmartCo. Leia os termos e condições para utilização do nosso conteúdo.",
+      "url": "https://smart-co.tech/termos",
+      "publisher": {
+        "@type": "Organization",
+        "name": "SmartCo"
+      }
+    })
+    document.head.appendChild(script)
+    return () => { document.head.removeChild(script) }
+  }, [])
+
   return (
     <div className="min-h-screen bg-dark-900 pt-24 pb-16">
       <div className="container mx-auto px-4 md:px-6">
