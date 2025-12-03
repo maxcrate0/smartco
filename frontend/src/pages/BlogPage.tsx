@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { Calendar, Clock, ArrowRight, BookOpen, Brain, Target, Zap } from 'lucide-react'
+import { Calendar, Clock, ArrowRight, BookOpen, Brain, Target, Zap, TrendingDown, FileText } from 'lucide-react'
 import { Button } from '../components/ui'
 
 const articles = [
@@ -25,14 +25,24 @@ const articles = [
     icon: Brain,
   },
   {
-    slug: 'active-recall-repeticao-espacada',
-    title: 'Active Recall e Repetição Espaçada: O Segredo dos Aprovados',
-    excerpt: 'As duas técnicas mais poderosas da ciência do aprendizado. Saiba como usar flashcards de forma inteligente para memorizar qualquer conteúdo.',
-    image: '🎯',
-    category: 'Memorização',
+    slug: 'curva-do-esquecimento',
+    title: 'O Que é a Curva do Esquecimento e Como Vencer Ela',
+    excerpt: 'Descubra por que você esquece 70% do que estudou em 24 horas — e as técnicas cientificamente comprovadas para reter conhecimento por meses.',
+    image: '📉',
+    category: 'Neurociência',
+    readTime: '15 min',
+    date: '2025-12-03',
+    icon: TrendingDown,
+  },
+  {
+    slug: 'mapas-mentais-vs-resumos',
+    title: 'Mapas Mentais vs Resumos: Qual é Melhor para o ENEM?',
+    excerpt: 'Descubra quando usar cada técnica, como combinar as duas para máxima retenção, e veja exemplos práticos para cada matéria.',
+    image: '🗺️',
+    category: 'Comparativo',
     readTime: '12 min',
     date: '2025-12-03',
-    icon: Target,
+    icon: FileText,
   },
 ]
 
