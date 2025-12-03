@@ -2,6 +2,9 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Menu, X, BookOpen, Sparkles } from 'lucide-react'
 import { Button, cn } from './ui'
+import { trackClick } from '../services/api'
+
+const PAYMENT_LINK = 'https://pay.kiwify.com.br/KGCSreQ'
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -14,6 +17,11 @@ export default function Header() {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  const handleCTAClick = () => {
+    trackClick('header_cta')
+    window.open(PAYMENT_LINK, '_blank')
+  }
 
   const navLinks = [
     { href: '#sobre', label: 'Sobre' },
