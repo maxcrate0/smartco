@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { Menu, X, BookOpen, Sparkles } from 'lucide-react'
+import { Menu, X, BookOpen, Sparkles, Zap } from 'lucide-react'
 import { Button, cn } from './ui'
 import { trackClick } from '../services/api'
 
@@ -23,83 +23,102 @@ export default function Header() {
     window.open(PAYMENT_LINK, '_blank')
   }
 
-  const navLinks = [
-    { href: '#sobre', label: 'Sobre' },
-    { href: '#tecnicas', label: 'Técnicas' },
-    { href: '#beneficios', label: 'Benefícios' },
-    { href: '#depoimentos', label: 'Depoimentos' },
-  ]
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id)
+    element?.scrollIntoView({ behavior: 'smooth' })
+    setIsMobileMenuOpen(false)
+  }
 
   return (
     <header
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
         isScrolled
-          ? 'bg-dark-900/80 backdrop-blur-lg border-b border-white/10 py-3'
-          : 'bg-transparent py-6'
+          ? 'bg-dark-900/95 backdrop-blur-lg border-b border-white/10 py-3'
+          : 'bg-transparent py-4'
       )}
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group">
+          <Link to="/" className="flex items-center gap-2 group">
             <div className="relative">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-accent-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <div className="w-9 h-9 bg-gradient-to-br from-primary-500 to-accent-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                 <BookOpen className="w-5 h-5 text-white" />
               </div>
-              <Sparkles className="w-4 h-4 text-accent-400 absolute -top-1 -right-1 animate-pulse" />
+              <Sparkles className="w-3 h-3 text-accent-400 absolute -top-1 -right-1 animate-pulse" />
             </div>
-            <span className="text-xl font-bold text-gradient hidden sm:block">
-              Smart Study
+            <span className="text-lg font-bold text-gradient hidden sm:block">
+              SmartCo
             </span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-gray-300 hover:text-white transition-colors duration-200 relative group"
-              >
-                {link.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary-500 to-accent-500 group-hover:w-full transition-all duration-300" />
-              </a>
-            ))}
-          </nav>
-
-          {/* CTA Button */}
-          <div className="hidden md:block">
-            <Button variant="primary" size="sm" onClick={handleCTAClick}>
-              Começar Agora
+          {/* Desktop - Price + CTA */}
+          <div className="hidden md:flex items-center gap-6">
+            <div className="text-right">
+              <span className="text-gray-500 text-sm line-through">R$ 40</span>
+              <span className="text-white font-bold text-lg ml-2">R$ 24,70</span>
+            </div>
+            <Button 
+              variant="primary" 
+              size="sm" 
+              onClick={handleCTAClick}
+              className="animate-pulse-glow"
+            >
+              <Zap className="w-4 h-4 mr-1" />
+              Garantir Meu Acesso
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2 text-gray-300 hover:text-white transition-colors"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          {/* Mobile - CTA + Menu */}
+          <div className="flex md:hidden items-center gap-2">
+            <Button 
+              variant="primary" 
+              size="sm" 
+              onClick={handleCTAClick}
+              className="text-xs px-3 py-2"
+            >
+              <Zap className="w-3 h-3 mr-1" />
+              R$ 24,70
+            </Button>
+            <button
+              className="p-2 text-gray-300 hover:text-white transition-colors"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <nav className="md:hidden mt-4 pb-4 border-t border-white/10 pt-4">
-            <div className="flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="text-gray-300 hover:text-white transition-colors duration-200 py-2"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {link.label}
-                </a>
-              ))}
-              <Button variant="primary" size="sm" className="mt-2" onClick={handleCTAClick}>
-                Começar Agora
+            <div className="flex flex-col gap-3">
+              <button
+                onClick={() => scrollToSection('comprar')}
+                className="text-gray-300 hover:text-white transition-colors duration-200 py-2 text-left"
+              >
+                💰 Ver Oferta
+              </button>
+              <button
+                onClick={() => scrollToSection('comprar')}
+                className="text-gray-300 hover:text-white transition-colors duration-200 py-2 text-left"
+              >
+                📚 O que está incluso
+              </button>
+              <button
+                onClick={() => scrollToSection('comprar')}
+                className="text-gray-300 hover:text-white transition-colors duration-200 py-2 text-left"
+              >
+                ⭐ Depoimentos
+              </button>
+              <Button 
+                variant="primary" 
+                className="mt-2 w-full" 
+                onClick={handleCTAClick}
+              >
+                <Zap className="w-4 h-4 mr-2" />
+                Quero Estudar Melhor Agora
               </Button>
             </div>
           </nav>
