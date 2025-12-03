@@ -46,6 +46,10 @@
       "@type": "Product",
       "name": "Guia de Técnicas de Estudo",
       "description": "E-book completo com técnicas de estudo cientificamente comprovadas para aumentar sua produtividade e retenção.",
+      "image": [
+        "https://smart-co.tech/og-image.png",
+        "https://smart-co.tech/favicon.svg"
+      ],
       "brand": {
         "@type": "Brand",
         "name": "SmartCo"
@@ -56,7 +60,42 @@
         "priceCurrency": "BRL",
         "price": "24.70",
         "priceValidUntil": "2025-12-31",
-        "availability": "https://schema.org/InStock"
+        "availability": "https://schema.org/InStock",
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": "0",
+            "currency": "BRL"
+          },
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "BR"
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": "0",
+              "maxValue": "0",
+              "unitCode": "MIN"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": "0",
+              "maxValue": "0",
+              "unitCode": "MIN"
+            }
+          }
+        },
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "BR",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+          "merchantReturnDays": "7",
+          "returnMethod": "https://schema.org/ReturnByMail",
+          "returnFees": "https://schema.org/FreeReturn"
+        }
       },
       "aggregateRating": {
         "@type": "AggregateRating",
