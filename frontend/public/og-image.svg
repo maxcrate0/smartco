@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0ea5e9"/>
+      <stop offset="100%" style="stop-color:#8b5cf6"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  
+  <!-- Decorative circles -->
+  <circle cx="150" cy="150" r="200" fill="#0ea5e9" opacity="0.1"/>
+  <circle cx="1050" cy="480" r="250" fill="#8b5cf6" opacity="0.1"/>
+  
+  <!-- Logo icon -->
+  <rect x="80" y="80" width="60" height="60" rx="12" fill="url(#accent)"/>
+  <text x="110" y="120" font-family="Arial, sans-serif" font-size="30" fill="white" text-anchor="middle">📚</text>
+  
+  <!-- Brand name -->
+  <text x="160" y="120" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="url(#accent)">SmartCo</text>
+  
+  <!-- Main title -->
+  <text x="600" y="260" font-family="Arial, sans-serif" font-size="56" font-weight="bold" fill="white" text-anchor="middle">Técnicas de Estudo</text>
+  <text x="600" y="330" font-family="Arial, sans-serif" font-size="56" font-weight="bold" fill="url(#accent)" text-anchor="middle">Comprovadas</text>
+  
+  <!-- Subtitle -->
+  <text x="600" y="400" font-family="Arial, sans-serif" font-size="28" fill="#94a3b8" text-anchor="middle">Aprenda 3x mais rápido com métodos científicos</text>
+  
+  <!-- Stats -->
+  <text x="300" y="520" font-family="Arial, sans-serif" font-size="24" fill="#0ea5e9" text-anchor="middle">+10.000 estudantes</text>
+  <text x="600" y="520" font-family="Arial, sans-serif" font-size="24" fill="#8b5cf6" text-anchor="middle">95% satisfação</text>
+  <text x="900" y="520" font-family="Arial, sans-serif" font-size="24" fill="#22c55e" text-anchor="middle">R$ 24,70</text>
+  
+  <!-- Bottom line -->
+  <rect x="100" y="580" width="1000" height="4" rx="2" fill="url(#accent)"/>
+</svg>

@@ -1,0 +1,17 @@
+# Robots.txt for smart-co.tech
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://smart-co.tech/sitemap.xml
+
+# Disallow admin area
+Disallow: /admin
+Disallow: /admin/
+
+# Allow search engine crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
