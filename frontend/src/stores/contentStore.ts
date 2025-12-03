@@ -61,8 +61,8 @@ const defaultContent: ContentState = {
   cta: {
     title: 'Comece Sua Transformação Hoje',
     description: 'Invista no seu futuro com o guia completo de técnicas de estudo. Acesso vitalício e atualizações gratuitas.',
-    price: '47',
-    originalPrice: '97',
+    price: '24,70',
+    originalPrice: '40',
     ctaText: 'Garantir Meu Acesso',
     ctaLink: 'https://pay.kiwify.com.br/KGCSreQ',
   },
