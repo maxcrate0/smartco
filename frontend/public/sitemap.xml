@@ -25,6 +25,18 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://smart-co.tech/blog/curva-do-esquecimento</loc>
+    <lastmod>2025-12-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://smart-co.tech/blog/mapas-mentais-vs-resumos</loc>
+    <lastmod>2025-12-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://smart-co.tech/privacidade</loc>
     <lastmod>2025-12-03</lastmod>
     <changefreq>yearly</changefreq>
