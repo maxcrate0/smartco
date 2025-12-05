@@ -85,10 +85,10 @@ export default function Footer() {
 
         {/* Bottom */}
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-gray-500 text-xs">
+          <p className="text-gray-400 text-xs">
             © {currentYear} SmartCo. Todos os direitos reservados.
           </p>
-          <p className="text-gray-500 text-xs text-center md:text-right max-w-md">
+          <p className="text-gray-400 text-xs text-center md:text-right max-w-md">
             Este produto não garante a obtenção de resultados. Qualquer referência ao desempenho de uma estratégia não deve ser interpretada como uma garantia de resultados.
           </p>
         </div>
