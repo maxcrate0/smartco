@@ -41,7 +41,7 @@ export default function Header() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
+          <Link to="/" className="flex items-center gap-2 group" aria-label="Ir para a página inicial da SmartCo">
             <div className="relative">
               <div className="w-9 h-9 bg-gradient-to-br from-primary-500 to-accent-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                 <BookOpen className="w-5 h-5 text-white" />
@@ -84,6 +84,7 @@ export default function Header() {
             <button
               className="p-2 text-gray-300 hover:text-white transition-colors"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Abrir menu de navegação"
             >
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
